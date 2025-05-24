@@ -53,7 +53,7 @@ const {
   //getDashboardStats
 } = require('../controllers/adminController');
 const { protect, adminOnly } = require('../middleware/authMiddleware');
-const { deleteUserById } = require('../controllers/userController');
+const { deleteUserById } = require('../controllers/usercontroller');
 
 // Dashboard Routes
 //router.get('/dashboard/stats', protect, adminOnly, getDashboardStats);
