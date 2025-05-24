@@ -1,0 +1,469 @@
+[{
+  "_id": {
+    "$oid": "68080126574679d8927fb24e"
+  },
+  "title": "testtt",
+  "description": "tttt",
+  "courseId": {
+    "$oid": "67d5994a19e57fd25bd37f2e"
+  },
+  "chapterId": {
+    "$oid": "67d6f0ff42ecd2f44397d0ec"
+  },
+  "questions": [
+    {
+      "text": "css",
+      "options": [
+        {
+          "text": " desi",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "68080126574679d8927fb250"
+          }
+        },
+        {
+          "text": "lang",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68080126574679d8927fb251"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "68080126574679d8927fb24f"
+      }
+    }
+  ],
+  "availableFrom": {
+    "$date": "2025-04-22T00:00:00.000Z"
+  },
+  "availableUntil": {
+    "$date": "2025-04-23T00:00:00.000Z"
+  },
+  "timeLimit": 30,
+  "createdAt": {
+    "$date": "2025-04-22T20:50:46.931Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-22T20:50:46.931Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68096d4f1204519d384d53e2"
+  },
+  "title": "Quiz sur UI UX Design (Niveau Moyen)",
+  "description": "Testez vos connaissances en UI/UX Design avec ce quiz à difficulté moyenne.",
+  "courseId": {
+    "$oid": "67d5994a19e57fd25bd37f2e"
+  },
+  "chapterId": {
+    "$oid": "67d6f0ff42ecd2f44397d0ec"
+  },
+  "questions": [
+    {
+      "text": "Quelle méthode de recherche utilisateur permet de comprendre les comportements et les besoins des utilisateurs dans leur environnement naturel ?",
+      "options": [
+        {
+          "text": "Tests A/B",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53e4"
+          }
+        },
+        {
+          "text": "Enquêtes en ligne",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53e5"
+          }
+        },
+        {
+          "text": "Études de cas",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53e6"
+          }
+        },
+        {
+          "text": "Observation sur site (Ethnographie)",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53e7"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "68096d4f1204519d384d53e3"
+      }
+    },
+    {
+      "text": "Lequel de ces principes de conception UI/UX vise à maintenir une cohérence visuelle et fonctionnelle tout au long de l'expérience utilisateur ?",
+      "options": [
+        {
+          "text": "Accessibilité",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53e9"
+          }
+        },
+        {
+          "text": "Réutilisation",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53ea"
+          }
+        },
+        {
+          "text": "Cohérence",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53eb"
+          }
+        },
+        {
+          "text": "Découplage",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53ec"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "68096d4f1204519d384d53e8"
+      }
+    },
+    {
+      "text": "Quel est le but principal d'un wireframe dans le processus de conception UI/UX ?",
+      "options": [
+        {
+          "text": "Présenter le design final de l'interface",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53ee"
+          }
+        },
+        {
+          "text": "Définir la structure et la navigation d'une interface",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53ef"
+          }
+        },
+        {
+          "text": "Créer un prototype interactif haute-fidélité",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53f0"
+          }
+        },
+        {
+          "text": "Définir la palette de couleurs et la typographie",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53f1"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "68096d4f1204519d384d53ed"
+      }
+    },
+    {
+      "text": "Laquelle de ces métriques est la plus pertinente pour évaluer la performance d'un site web du point de vue de l'expérience utilisateur ?",
+      "options": [
+        {
+          "text": "Nombre de pages vues",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53f3"
+          }
+        },
+        {
+          "text": "Taux de rebond",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53f4"
+          }
+        },
+        {
+          "text": "Nombre de téléchargements",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53f5"
+          }
+        },
+        {
+          "text": "Nombre de liens entrants",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53f6"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "68096d4f1204519d384d53f2"
+      }
+    },
+    {
+      "text": "Qu'est-ce qu'un persona en UI/UX design ?",
+      "options": [
+        {
+          "text": "Un prototype interactif d'une application",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53f8"
+          }
+        },
+        {
+          "text": "Une représentation semi-fictive d'un utilisateur cible",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53f9"
+          }
+        },
+        {
+          "text": "Un outil de test A/B",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53fa"
+          }
+        },
+        {
+          "text": "Une méthode de cartographie de l'expérience utilisateur",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68096d4f1204519d384d53fb"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "68096d4f1204519d384d53f7"
+      }
+    }
+  ],
+  "availableFrom": {
+    "$date": "2025-04-23T00:00:00.000Z"
+  },
+  "availableUntil": {
+    "$date": "2025-04-25T00:00:00.000Z"
+  },
+  "timeLimit": 30,
+  "createdAt": {
+    "$date": "2025-04-23T22:44:31.518Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-23T22:44:31.518Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "680a87e0d181a20d5c8f085c"
+  },
+  "title": "Quiz sur les fondamentaux du UI/UX Design",
+  "description": "Testez vos connaissances sur les principes fondamentaux de la conception UI/UX.",
+  "courseId": {
+    "$oid": "67d5994a19e57fd25bd37f2e"
+  },
+  "chapterId": {
+    "$oid": "67f8e93ff402c65ec8938dff"
+  },
+  "questions": [
+    {
+      "text": "Quelle est la principale différence entre l'UI et l'UX ?",
+      "options": [
+        {
+          "text": "L'UI se concentre sur l'esthétique, l'UX sur la fonctionnalité.",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f085e"
+          }
+        },
+        {
+          "text": "L'UI est la conception de l'interface, l'UX est l'expérience utilisateur globale.",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f085f"
+          }
+        },
+        {
+          "text": "L'UI est la partie visible, l'UX est invisible pour l'utilisateur.",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f0860"
+          }
+        },
+        {
+          "text": "Il n'y a pas de différence significative entre l'UI et l'UX.",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f0861"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "680a87e0d181a20d5c8f085d"
+      }
+    },
+    {
+      "text": "Lequel de ces principes de conception n'est PAS directement lié à l'amélioration de l'expérience utilisateur ?",
+      "options": [
+        {
+          "text": "Accessibilité",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f0863"
+          }
+        },
+        {
+          "text": "Cohérence",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f0864"
+          }
+        },
+        {
+          "text": "Optimisation du moteur de recherche (SEO)",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f0865"
+          }
+        },
+        {
+          "text": "Utilisabilité",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f0866"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "680a87e0d181a20d5c8f0862"
+      }
+    },
+    {
+      "text": "Quel est le rôle principal d'un persona dans le processus de conception UX ?",
+      "options": [
+        {
+          "text": "Représenter graphiquement l'interface utilisateur.",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f0868"
+          }
+        },
+        {
+          "text": "Définir les spécifications techniques du produit.",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f0869"
+          }
+        },
+        {
+          "text": "Représenter un type d'utilisateur cible avec ses besoins et motivations.",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f086a"
+          }
+        },
+        {
+          "text": "Tester le temps de chargement du site web.",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f086b"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "680a87e0d181a20d5c8f0867"
+      }
+    },
+    {
+      "text": "Qu'est-ce qu'un wireframe ?",
+      "options": [
+        {
+          "text": "Un prototype interactif haute-fidélité.",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f086d"
+          }
+        },
+        {
+          "text": "Une maquette basse-fidélité qui esquisse la structure et la disposition d'une interface.",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f086e"
+          }
+        },
+        {
+          "text": "Un document détaillant les spécifications techniques du design.",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f086f"
+          }
+        },
+        {
+          "text": "Un test utilisateur formel.",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f0870"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "680a87e0d181a20d5c8f086c"
+      }
+    },
+    {
+      "text": "Laquelle de ces méthodes n'est PAS une technique de recherche utilisateur courante ?",
+      "options": [
+        {
+          "text": "Tests utilisateurs",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f0872"
+          }
+        },
+        {
+          "text": "Interviews",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f0873"
+          }
+        },
+        {
+          "text": "Analyse des données Google Analytics",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f0874"
+          }
+        },
+        {
+          "text": "Brainstorming aléatoire sans objectif précis",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "680a87e0d181a20d5c8f0875"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "680a87e0d181a20d5c8f0871"
+      }
+    }
+  ],
+  "availableFrom": {
+    "$date": "2025-04-24T00:00:00.000Z"
+  },
+  "availableUntil": {
+    "$date": "2025-04-25T00:00:00.000Z"
+  },
+  "timeLimit": 30,
+  "createdAt": {
+    "$date": "2025-04-24T18:50:08.206Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-24T18:50:08.206Z"
+  },
+  "__v": 0
+}]
