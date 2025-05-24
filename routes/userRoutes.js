@@ -1,5 +1,5 @@
 const express = require("express");
-const { getUserById, deleteUserById, updateUserById, getUserByIdparms } = require("../controllers/userController");
+const { getUserById, deleteUserById, updateUserById, getUserByIdparms } = require("../controllers/usercontroller");
 const { protect } = require("../middleware/authMiddleware");
 const uploadMiddleware = require("../utils/multerConfig");
 
