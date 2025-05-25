@@ -80,7 +80,7 @@ exports.createMeeting = async (req, res) => {
 const [hour, minute] = time.split(":").map(Number);
 // Créer la date puis soustraire 1 heure (3600000 ms)
 const dateTime = new Date(year, month - 1, day, hour, minute);
-dateTime.setTime(dateTime.getTime() - 7200000); // Soustrait 1 heure    console.log("time date ",dateTime);
+dateTime.setTime(dateTime.getTime() - 3600000); // Soustrait 1 heure    console.log("time date ",dateTime);
     // Créer la réunion
     const newMeeting = new Meeting({
       courseId,
@@ -227,7 +227,7 @@ if (date || time) {
   }
   
   // Soustraire 1 heure avant sauvegarde
-  currentDate.setTime(currentDate.getTime() - 7200000);
+  currentDate.setTime(currentDate.getTime() - 3600000);
   updates.startTime = currentDate;
 }
     
