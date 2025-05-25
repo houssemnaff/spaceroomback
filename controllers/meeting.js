@@ -78,7 +78,7 @@ exports.createMeeting = async (req, res) => {
     // Convertir date et heure en objet Date
     const [year, month, day] = date.split("-").map(Number);
 const [hour, minute] = time.split(":").map(Number);
-const dateTime = new Date(year, month - 1, day, hour, minute);
+const dateTime = new Date(Date.UTC(year, month - 1, day, hour, minute));
     console.log("time date ",dateTime);
     // Créer la réunion
     const newMeeting = new Meeting({
@@ -212,20 +212,20 @@ exports.updateMeeting = async (req, res) => {
     
     // Si date ou heure sont modifiées, mettre à jour startTime
     if (date || time) {
-
-      
-      const currentDate = new Date(meeting.startTime);
-      const newDate = date ? new Date(`${date}T00:00:00`) : currentDate;
- 
-      if (time) {
-        const [hours, minutes] = time.split(':');
-        newDate.setHours(parseInt(hours), parseInt(minutes), 0, 0);
-      } else {
-        newDate.setHours(currentDate.getHours(), currentDate.getMinutes(), 0, 0);
-      }
-      
-      updates.startTime = newDate;
-    }
+  const currentDate = new Date(meeting.startTime);
+  
+  if (date) {
+    const [year, month, day] = date.split("-").map(Number);
+    currentDate.setUTCFullYear(year, month - 1, day);
+  }
+  
+  if (time) {
+    const [hours, minutes] = time.split(':');
+    currentDate.setUTCHours(parseInt(hours), parseInt(minutes));
+  }
+  
+  updates.startTime = currentDate;
+}
     
     const updatedMeeting = await Meeting.findByIdAndUpdate(
       meetingId,
