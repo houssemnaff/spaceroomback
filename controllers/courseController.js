@@ -401,7 +401,7 @@ exports.inviteStudentToCourse = async (req, res) => {
     }
 
     // Créer le lien d'invitation avec la clé d'accès du cours
-    const inviteLink = `${process.env.FRONTEND_URL }/course/join/${course.accessKey}`;
+    const inviteLink = `${process.env.FRONTEND_URL }course/join/${course.accessKey}`;
     
     // Préparer le contenu de l'email
     const emailContent = {
