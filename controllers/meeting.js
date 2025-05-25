@@ -78,8 +78,9 @@ exports.createMeeting = async (req, res) => {
     // Convertir date et heure en objet Date
     const [year, month, day] = date.split("-").map(Number);
 const [hour, minute] = time.split(":").map(Number);
-const dateTime = new Date(Date.UTC(year, month - 1, day, hour, minute));
-    console.log("time date ",dateTime);
+// Créer la date puis soustraire 1 heure (3600000 ms)
+const dateTime = new Date(year, month - 1, day, hour, minute);
+dateTime.setTime(dateTime.getTime() - 3600000); // Soustrait 1 heure    console.log("time date ",dateTime);
     // Créer la réunion
     const newMeeting = new Meeting({
       courseId,
@@ -211,19 +212,22 @@ exports.updateMeeting = async (req, res) => {
     if (duration) updates.duration = parseInt(duration);
     
     // Si date ou heure sont modifiées, mettre à jour startTime
-    if (date || time) {
-  const currentDate = new Date(meeting.startTime);
+    // Dans exports.updateMeeting
+if (date || time) {
+  let currentDate = new Date(meeting.startTime);
   
   if (date) {
     const [year, month, day] = date.split("-").map(Number);
-    currentDate.setUTCFullYear(year, month - 1, day);
+    currentDate = new Date(year, month - 1, day, currentDate.getHours(), currentDate.getMinutes());
   }
   
   if (time) {
     const [hours, minutes] = time.split(':');
-    currentDate.setUTCHours(parseInt(hours), parseInt(minutes));
+    currentDate.setHours(parseInt(hours), parseInt(minutes));
   }
   
+  // Soustraire 1 heure avant sauvegarde
+  currentDate.setTime(currentDate.getTime() - 3600000);
   updates.startTime = currentDate;
 }
     
