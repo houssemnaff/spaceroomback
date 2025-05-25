@@ -123,7 +123,6 @@ exports.getMeetingsByCourse = async (req, res) => {
   try {
     const { courseId } = req.params;
     const userId = req.user.id;
-   // console.log("userrrrrr id ",userId);
     
     // Vérifier l'accès au cours
     const accessCheck = await checkCourseAccess(userId, courseId);
@@ -131,25 +130,13 @@ exports.getMeetingsByCourse = async (req, res) => {
       return res.status(403).json({ message: accessCheck.message || "Accès non autorisé" });
     }
     
-    const now = new Date();
-    
     // Récupérer toutes les réunions du cours
-    const meetings = await Meeting.find({ courseId });
-    
-    // Trier les réunions en à venir et passées
-    const upcomingMeetings = meetings
-      .filter(meeting => new Date(meeting.startTime) > now || 
-        (new Date(meeting.startTime).getTime() + meeting.duration * 60000) > now.getTime())
-      .sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
-      
-    const pastMeetings = meetings
-      .filter(meeting => (new Date(meeting.startTime).getTime() + meeting.duration * 60000) <= now.getTime())
-      .sort((a, b) => new Date(b.startTime) - new Date(a.startTime)); // Tri inversé pour les passées
+    const meetings = await Meeting.find({ courseId })
+      .sort({ startTime: 1 }); // Trier par date de début
     
     res.status(200).json({
       success: true,
-      upcomingMeetings,
-      pastMeetings,
+      meetings,
       isOwner: accessCheck.isOwner,
       isStudent: accessCheck.isStudent
     });
