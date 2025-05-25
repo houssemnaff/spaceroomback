@@ -234,24 +234,25 @@ exports.getcourstudents = async (req, res) => {
     const { courseId, studentId } = req.params;
     const userId = req.user.id; // ID du professeur qui fait la requête
   
-    // Vérification des ObjectId
     if (!mongoose.Types.ObjectId.isValid(courseId) || 
-        !mongoose.Types.ObjectId.isValid(studentId)) {
-      return res.status(400).json({ message: "ID de cours ou étudiant invalide" });
+      !mongoose.Types.ObjectId.isValid(studentId)) {
+    return res.status(400).json({ message: "ID de cours ou étudiant invalide" });
+  }
+
+  try {
+    // Rechercher le cours
+    const course = await Course.findById(courseId);
+
+    if (!course) {
+      return res.status(404).json({ message: "Cours non trouvé" });
     }
-  
-    try {
-      // 1. Vérifier que le cours existe et que l'utilisateur est le propriétaire
-      const course = await Course.findOne({ 
-        _id: courseId, 
-        owner: userId 
-      });
-  
-      if (!course) {
-        return res.status(404).json({ 
-          message: "Cours non trouvé ou vous n'êtes pas le propriétaire" 
-        });
-      }
+
+    const isOwner = course.owner.toString() === userId;
+    const isStudent = studentId === userId && course.students.includes(studentId);
+
+    if (!isOwner && !isStudent) {
+      return res.status(403).json({ message: "Accès refusé : vous devez être le propriétaire ou l'étudiant inscrit" });
+    }
   
       // 2. Retirer l'étudiant du cours
       await Course.updateOne(
