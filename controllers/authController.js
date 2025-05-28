@@ -102,7 +102,7 @@ const googleRegister = async (req, res) => {
     res.status(400).json({ message: "Invalid Google token" });
   }
 };
-// Auth Google: login or register
+/*Auth Google: login or register
 const googleAuth = async (req, res) => {
   try {
     const { token } = req.body;
@@ -148,7 +148,7 @@ const googleAuth = async (req, res) => {
     console.error("Erreur lors de l'auth Google :", error.message);
     res.status(400).json({ message: "Token Google invalide ou erreur interne" });
   }
-};
+};*/
 
 
 const googleLogin = async (req, res) => {
@@ -317,5 +317,4 @@ module.exports = {
   googleRegister,
   forgotPassword,
   resetPassword ,
-  googleAuth
 };

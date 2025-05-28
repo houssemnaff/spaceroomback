@@ -2,7 +2,6 @@ const express = require("express");
 const { 
   registerUser, 
   loginUser,
-  googleAuth, 
   getUsers, 
   googleLogin, 
   googleRegister,
@@ -11,7 +10,6 @@ const {
 } = require("../controllers/authController");
 const { protect, adminOnly } = require("../middleware/authMiddleware");
 const router = express.Router();
-router.post("/google-Auth",  googleAuth);
 router.post("/google-login", googleLogin);
 router.post("/google-register", googleRegister);
 router.post("/register", registerUser);
