@@ -320,5 +320,6 @@ module.exports = {
   googleLogin, 
   googleRegister,
   forgotPassword,
-  resetPassword 
+  resetPassword ,
+  googleAuth
 };

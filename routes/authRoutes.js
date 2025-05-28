@@ -1,8 +1,8 @@
 const express = require("express");
 const { 
   registerUser, 
-  googleAuth,
-  loginUser, 
+  loginUser,
+  googleAuth, 
   getUsers, 
   googleLogin, 
   googleRegister,
