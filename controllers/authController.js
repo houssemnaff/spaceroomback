@@ -142,11 +142,7 @@ const googleAuth = async (req, res) => {
       { expiresIn: "24h" }
     );
 
-    res.status(200).json({
-    
-      token: jwtToken,
-     
-    });
+       res.json({ token: jwtToken, user });
 
   } catch (error) {
     console.error("Erreur lors de l'auth Google :", error.message);
