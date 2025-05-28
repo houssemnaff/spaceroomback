@@ -102,6 +102,57 @@ const googleRegister = async (req, res) => {
     res.status(400).json({ message: "Invalid Google token" });
   }
 };
+// Auth Google: login or register
+const googleAuth = async (req, res) => {
+  try {
+    const { token } = req.body;
+
+    if (!token) {
+      return res.status(400).json({ message: "Token manquant" });
+    }
+
+    // Vérifier le token Google
+    const googleResponse = await axios.get(`https://oauth2.googleapis.com/tokeninfo?id_token=${token}`);
+    const { email, name, picture, sub } = googleResponse.data;
+
+    if (!email || !sub) {
+      return res.status(400).json({ message: "Informations Google invalides." });
+    }
+
+    // Rechercher l'utilisateur
+    let user = await User.findOne({ email });
+
+    if (!user) {
+      // Créer un nouvel utilisateur s’il n’existe pas
+      user = new User({
+        googleId: sub,
+        name,
+        email,
+        imageurl: picture,
+        role: "user",
+      });
+
+      await user.save();
+    }
+
+    // Générer le JWT
+    const jwtToken = jwt.sign(
+      { id: user._id, role: user.role },
+      process.env.JWT_SECRET,
+      { expiresIn: "24h" }
+    );
+
+    res.status(200).json({
+      message: "Authentification réussie",
+      token: jwtToken,
+      user,
+    });
+
+  } catch (error) {
+    console.error("Erreur lors de l'auth Google :", error.message);
+    res.status(400).json({ message: "Token Google invalide ou erreur interne" });
+  }
+};
 
 
 const googleLogin = async (req, res) => {
