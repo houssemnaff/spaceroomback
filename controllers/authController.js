@@ -143,9 +143,9 @@ const googleAuth = async (req, res) => {
     );
 
     res.status(200).json({
-      message: "Authentification réussie",
+    
       token: jwtToken,
-      user,
+     
     });
 
   } catch (error) {
