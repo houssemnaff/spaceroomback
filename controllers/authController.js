@@ -94,7 +94,7 @@ const googleRegister = async (req, res) => {
     }
 
     // Generate a JWT token
-    const jwtToken = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    const jwtToken = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: "24h" });
 
     res.json({ token: jwtToken, user });
   } catch (error) {
@@ -169,7 +169,7 @@ const googleLogin = async (req, res) => {
     }
 
     // Generate a JWT token
-    const jwtToken = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    const jwtToken = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: "24h" });
 
     // Return the token and user data
     res.json({ token: jwtToken, user });
