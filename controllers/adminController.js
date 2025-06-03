@@ -2001,6 +2001,40 @@ const getTotalCounts = async (req, res) => {
     res.status(500).json({ message: 'Erreur lors de la récupération des totaux' });
   }
 };
+const createCourseWithOwner = async (req, res) => {
+  try {
+    const { title, description, matiere, imageurl, ownerId } = req.body;
+    
+    // Vérifier si l'utilisateur existe
+    const owner = await User.findById(ownerId);
+    if (!owner) {
+      return res.status(404).json({ message: 'Utilisateur non trouvé' });
+    }
+
+    // Créer le cours
+    const course = new Course({
+      title,
+      description,
+      matiere,
+      imageurl,
+      owner: ownerId,
+      accessKey: Math.random().toString(36).substring(2, 10)
+    });
+    
+    await course.save();
+    
+    // Ajouter le cours aux cours créés de l'utilisateur
+    await User.findByIdAndUpdate(ownerId, {
+      $push: { createdCourses: course._id }
+    });
+    
+    res.status(201).json(course);
+  } catch (error) {
+    console.error('Error creating course with owner:', error);
+    res.status(500).json({ message: 'Erreur lors de la création du cours' });
+  }
+};
+
 
 module.exports = {
   // Dashboard Functions
@@ -2017,6 +2051,7 @@ module.exports = {
   createCourse,
   updateCourse,
   deleteCourse,
+  createCourseWithOwner,
   
   // Meeting Management 
   getAllMeetings,

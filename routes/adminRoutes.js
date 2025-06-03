@@ -50,6 +50,7 @@ const {
   updateAssignment,
   deleteAssignment,
   getTotalCounts,
+  createCourseWithOwner,
   //getDashboardStats
 } = require('../controllers/adminController');
 const { protect, adminOnly } = require('../middleware/authMiddleware');
@@ -69,6 +70,7 @@ router.get('/courses/:id', protect, adminOnly, getCourseById);
 router.post('/courses', protect, adminOnly, createCourse);
 router.put('/courses/:id', protect, adminOnly, updateCourse);
 router.delete('/courses/:courseId', protect, adminOnly, deleteCourse);
+router.post('/courses/with-owner', protect, adminOnly, createCourseWithOwner);
 
 // Course Statistics Routes
 router.get('/courses/stats/:id', protect, adminOnly, getCourseStats);
